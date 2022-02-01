@@ -25,24 +25,50 @@ def pow(a,b):
     if(b == 1):
         return a
 
-    count = 0
+    count = 1
     answer = a
     while(count != b):
         answer = answer * a
+        count += 1
 
     return answer
 
 #function that solves a string equation recieved,"0 = X + 5"
 def solve_equation(equation):
     count_positive = 0
-    count_nacative = 0
-    new_equation = erase_space(equation)
-    for idx, char in enumerate(new_equation):
-        if(char == 'X'):
-             if(char[idx - 1] == '+'):
-                    print("h")
+    count_nagative = 0
+    count_positive_numbers = 0
+    count_nagative_numbers = 0
 
-    return "x = "
+    new_equation = erase_space(equation)
+
+    for idx, char in enumerate(new_equation):
+        if((char == 'X') or (char == 'x')):
+             if(char[idx - 1] == '+'):
+                    count_positive += 1
+             if(char[idx -1] == '-'):
+                    count_nagative += 1
+
+        if((char != 'X') and (char != 'x') and (char != '=') and (char != '-') and (char != '+')):
+            if(char[idx - 1] == '+'):
+                    count_positive_numbers += 1
+            if(char[idx -1] == '-'):
+                    count_nagative_numbers += 1
+
+    X = count_positive - count_nagative
+    numbers = count_positive_numbers - count_nagative_numbers
+
+    if(X == 0):return "error"
+
+    if(X > 0 ):
+        result = -(divide(numbers,X))
+        return result
+
+    if(X < 0):
+        result = (divide(numbers,X))
+        return result
+    
+    return 0
 
 #function that recieves an equation, "Y = X + 2", and an X, and returns Y
 def solve_y(equation, y):
