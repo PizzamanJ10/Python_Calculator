@@ -30,10 +30,6 @@ def pow(a,b):
     while(count != b):
         answer = answer * a
         count += 1
-<<<<<<< HEAD
-=======
-
->>>>>>> c5b69d4ededd6f6b28d66d1a5efa44647eb23d4a
     return answer
 
 #function that solves a string equation recieved,"0 = X + 5"

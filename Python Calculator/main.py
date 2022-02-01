@@ -92,6 +92,18 @@ equation_input = tk.Entry()
 equation_label.pack(fill='x', padx=5, pady=5)
 equation_input.pack(fill='x', padx=5, pady=5)
 
+button2 = ttk.Button(
+    window,
+    text = "Get the answer",
+    command = showinfo(
+        title = "Equation Result",
+        message = "X is " + str(solve_equation(equation_input.get()))
+        
+    ))
+
+button.pack(fill='x', padx=5, pady=(10,5))
+
+
 showinfo(
         title = "Equation Result",
         message = "X is " + str(solve_equation(equation_input.get()))
