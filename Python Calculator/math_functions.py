@@ -1,5 +1,5 @@
-
-
+import itertools
+from utils import *
 
 #add function, adds a and b
 def add(a, b):
@@ -19,10 +19,29 @@ def multiply(a, b):
 
 #power function, returns a to the power of b
 def pow(a,b):
-    return 0
+    if(b == 0):
+        return 1
 
-#function that solves a string equation recieved
+    if(b == 1):
+        return a
+
+    count = 0
+    answer = a
+    while(count != b):
+        answer = answer * a
+
+    return answer
+
+#function that solves a string equation recieved,"0 = X + 5"
 def solve_equation(equation):
+    count_positive = 0
+    count_nacative = 0
+    new_equation = erase_space(equation)
+    for idx, char in enumerate(new_equation):
+        if(char == 'X'):
+             if(char[idx - 1] == '+'):
+                    print("h")
+
     return "x = "
 
 #function that recieves an equation, "Y = X + 2", and an X, and returns Y
