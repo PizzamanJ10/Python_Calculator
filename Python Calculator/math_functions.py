@@ -25,11 +25,11 @@ def pow(a,b):
     if(b == 1):
         return a
 
-    count = 0
+    count = 1
     answer = a
     while(count != b):
         answer = answer * a
-
+        count += 1
     return answer
 
 #function that solves a string equation recieved,"0 = X + 5"
