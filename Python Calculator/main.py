@@ -13,12 +13,29 @@ window.title("DS Calculator")
 # set window width and height
 window.geometry("500x500")
 
+#creating some basic elements
+first_label = tk.Label(text = "First input:")
+first_input = tk.Entry()
 
-#function that displays a message with the answer
+second_label = tk.Label(text = "Second input:")
+second_input = tk.Entry()
+
+choose_label = tk.Label(text = "Choose the function you'd like to use:")
+
+#packing those basic elements
+first_label.pack(fill='x', padx=5, pady=(10,5))
+first_input.pack(fill='x', padx=5, pady=(5,30))
+second_label.pack(fill='x', padx=5, pady=5)
+second_input.pack(fill='x', padx=5, pady=(5, 30))
+choose_label.pack(fill='x', padx=5, pady=5)
+
+##################################################
+#function that displays a message with the answer#
+##################################################
 def show_answer():
 
-    a = 100
-    b = 20
+    a = int(first_input.get())
+    b = int(second_input.get())
 
     toShow = "null"
 
@@ -65,7 +82,33 @@ button = ttk.Button(
     text = "Get the answer",
     command = show_answer)
 
-button.pack(fill='x', padx=5, pady=5)
+button.pack(fill='x', padx=5, pady=(10,5))
+
+
+#Equation solving part
+equation_label = tk.Label(text = "Put an equation you'd like to solve here:")
+equation_input = tk.Entry()
+
+equation_label.pack(fill='x', padx=5, pady=5)
+equation_input.pack(fill='x', padx=5, pady=5)
+
+button2 = ttk.Button(
+    window,
+    text = "Get the answer",
+    command = showinfo(
+        title = "Equation Result",
+        message = "X is " + str(solve_equation(equation_input.get()))
+        
+    ))
+
+button.pack(fill='x', padx=5, pady=(10,5))
+
+
+showinfo(
+        title = "Equation Result",
+        message = "X is " + str(solve_equation(equation_input.get()))
+        
+    )
 
 # set window background color
 window.configure(bg='lightgray')
