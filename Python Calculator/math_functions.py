@@ -1,23 +1,21 @@
 
-#pizza is delicious 
-#hi shimi
 
 
 #add function, adds a and b
 def add(a, b):
-    return 0
+    return a + b
 
 #subtract function, subtracts b from a
 def subtract(a, b):
-    return 0
+    return a - b
 
 #divide function, divides a by b
 def divide(a, b):
-    return 0
+    return a/b
 
 #multiply function, multiplies b by a
 def multiply(a, b):
-    return 0
+    return a * b
 
 #power function, returns a to the power of b
 def pow(a,b):
