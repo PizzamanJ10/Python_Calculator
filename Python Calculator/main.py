@@ -61,6 +61,13 @@ def show_answer():
     )
 
 
+def thingie():
+    showinfo(
+        title = "Equation Result",
+        message = "X is " + str(solve_equation(equation_input.get()))
+        
+    )
+
 functions = ["Add", "Subtract",  "Multiply" , "Divide", "Power"]
 
 selected_function = tk.StringVar()
@@ -95,20 +102,12 @@ equation_input.pack(fill='x', padx=5, pady=5)
 button2 = ttk.Button(
     window,
     text = "Get the answer",
-    command = showinfo(
-        title = "Equation Result",
-        message = "X is " + str(solve_equation(equation_input.get()))
-        
-    ))
+    command = thingie)
 
-button.pack(fill='x', padx=5, pady=(10,5))
+button2.pack(fill='x', padx=5, pady=(10,5))
 
 
-showinfo(
-        title = "Equation Result",
-        message = "X is " + str(solve_equation(equation_input.get()))
-        
-    )
+
 
 # set window background color
 window.configure(bg='lightgray')
