@@ -1,8 +1,5 @@
-from ctypes.wintypes import OLESTR
-
-
 def erase_space(equation):
-    new_equation = OLESTR.replace(" ", "")
+    new_equation = equation.replace(' ','')
     return new_equation
 
 

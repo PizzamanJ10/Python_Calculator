@@ -101,14 +101,9 @@ button2 = ttk.Button(
         
     ))
 
-button.pack(fill='x', padx=5, pady=(10,5))
+button2.pack(fill='x', padx=5, pady=(10,5))
 
 
-showinfo(
-        title = "Equation Result",
-        message = "X is " + str(solve_equation(equation_input.get()))
-        
-    )
 
 # set window background color
 window.configure(bg='lightgray')
