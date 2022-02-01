@@ -38,21 +38,23 @@ def solve_equation(equation):
     count_nagative = 0
     count_positive_numbers = 0
     count_nagative_numbers = 0
+    
 
     new_equation = erase_space(equation)
 
     for idx, char in enumerate(new_equation):
         if((char == 'X') or (char == 'x')):
-             if((char[idx - 1] == '+') or (char[idx - 1] == '=') ):
+             if((new_equation[idx - 1] == '+') or (new_equation[idx - 1] == '=')):
                     count_positive += 1
-             if(char[idx -1] == '-'):
+             if(new_equation[idx -1] == '-'):
                     count_nagative += 1
 
         if((char != 'X') and (char != 'x') and (char != '=') and (char != '-') and (char != '+')):
-            if(char[idx - 1] == '+'):
-                    count_positive_numbers += 1
-            if(char[idx -1] == '-'):
-                    count_nagative_numbers += 1
+            if(new_equation[idx - 1] == '+'):
+                    count_positive_numbers += int(char)
+            if(new_equation[idx -1] == '-'):
+                    count_nagative_numbers += int(char)
+
 
     X = count_positive - count_nagative
     numbers = count_positive_numbers - count_nagative_numbers
