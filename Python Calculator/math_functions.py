@@ -44,7 +44,7 @@ def solve_equation(equation):
 
     for idx, char in enumerate(new_equation):
         if((char == 'X') or (char == 'x')):
-             if(char[idx - 1] == '+'):
+             if((char[idx - 1] == '+') or (char[idx - 1] == '=') ):
                     count_positive += 1
              if(char[idx -1] == '-'):
                     count_nagative += 1
